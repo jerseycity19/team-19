@@ -1,0 +1,23 @@
+<html>
+<body>
+
+<button onclick="myFunction()">Question Generator</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var questions = ['What Role Does Television Play in Your Life and the Life of Your Family?', 'Do You Believe Facebook is Going Extinct?','Active Facebook User or Active Instragram User?', 'What is your favorite subject?', 'What are you passionate about?', 'What do you do as your hobby?'];
+    var question = questions[Math.floor(Math.random()*questions.length)];
+  var txt;
+  if (confirm(""+ question)) {
+    txt = "Question: " + question;
+  } else {
+    txt = "";
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+</script>
+
+</body>
+</html>

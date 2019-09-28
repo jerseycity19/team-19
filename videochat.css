@@ -1,0 +1,27 @@
+body {
+    background-image: url('./videochatloading.gif');
+    background-size: cover;
+    box-shadow: 0 3000px rgba(219, 207, 221, 0.4) inset;
+}
+.vc {
+    display: flex;
+    /* background-color: blue;s */
+    margin-left: 20vw;
+    /* margin-top: 20vw;s */
+    width: 50vw;
+    flex-direction: column;
+    color: white;
+}
+#vc-participants {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    overflow-wrap: break-word;
+}
+#input-form {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    position: absolute;
+    bottom: 20;
+}

@@ -32,9 +32,15 @@
         "@fortawesome/fontawesome-free": "5.10.2",
         "bootstrap": "4.3.1",
         "firebase": "^7.0.0",
+<<<<<<< HEAD
+        "firebase-admin": "^8.6.0",
+        "firebase-functions": "^3.2.0",
+=======
         "firebaseui": "^4.2.0",
+>>>>>>> f62321cf0848d682f2894a2ee393d92f64e8e862
         "jquery": "3.4.1",
-        "jquery.easing": "^1.4.1"
+        "jquery.easing": "^1.4.1",
+        "twilio-video": "^1.19.2"
     },
     "devDependencies": {
         "browser-sync": "2.26.7",
