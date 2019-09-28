@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,10 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 </head>
+
 <body>
     <section class="sign-in">
         <div class="container">
@@ -26,15 +30,16 @@
                     <form method="POST" class="register-form" id="login-form">
                         <div class="form-group">
                             <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="text" name="your_name" id="your_name" placeholder="Your Name"/>
+                            <input type="text" name="your_name" id="your_name" placeholder="Your Name" />
                         </div>
                         <div class="form-group">
                             <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                            <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+                            <input type="password" name="your_pass" id="your_pass" placeholder="Password" />
                         </div>
                         <div class="form-group">
                             <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
-                            <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                            <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember
+                                me</label>
                         </div>
                         <div class="form-group form-button">
                             <a href="index.html" class="signup-image-link">Sign In</a>
@@ -53,11 +58,41 @@
         </div>
     </section>
 
-</div>
+    </div>
 
-<!-- JS -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="js/main.js"></script>
-<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="bower_components/firebaseui/dist/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="bower_components/firebaseui/dist/firebaseui.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <script>
+        var firebase = require('firebase');
+        var firebaseui = require('firebaseui');
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        ui.start('#firebaseui-auth-container', {
+            signInOptions: [
+                firebase.auth.EmailAuthProvider.PROVIDER_ID
+            ],
+            // Other config options...
+        });
+        ui.start('#firebaseui-auth-container', {
+            signInOptions: [
+                // List of OAuth providers supported.
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+                firebase.auth.GithubAuthProvider.PROVIDER_ID
+            ],
+            // Other config options...
+        });
+        ui.start('#firebaseui-auth-container', {
+            signInOptions =[
+                firebase.auth.PhoneAuthProvider.PROVIDER_ID
+            ],
+            // Other config options...
+        });
+    </script>
 </body>
