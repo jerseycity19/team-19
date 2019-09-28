@@ -7,10 +7,11 @@ const tokens = {
     ahmaad: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTS2UxM2ExMDk1Yzg0YmVlMjVmNTBmMGVlNjE0NGU4Y2VlLTE1Njk2NzM2NjMiLCJncmFudHMiOnsiaWRlbnRpdHkiOiJhaG1hYWQiLCJ2aWRlbyI6eyJyb29tIjoidGVzdDEifX0sImlhdCI6MTU2OTY3MzY2MywiZXhwIjoxNTY5Njc3MjYzLCJpc3MiOiJTS2UxM2ExMDk1Yzg0YmVlMjVmNTBmMGVlNjE0NGU4Y2VlIiwic3ViIjoiQUM1M2VlN2M5YjAyOTcxMTE1MThhNmYyZWFlMjcxNDhiNCJ9.n3zCNmUMHPInPLtl0JcDTnid1ZLtNb-QzgKUpNtq1eY",
     danielle: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTS2UxM2ExMDk1Yzg0YmVlMjVmNTBmMGVlNjE0NGU4Y2VlLTE1Njk2NzM2NzkiLCJncmFudHMiOnsiaWRlbnRpdHkiOiJkYW5pZWxsZSIsInZpZGVvIjp7InJvb20iOiJ0ZXN0MSJ9fSwiaWF0IjoxNTY5NjczNjc5LCJleHAiOjE1Njk2NzcyNzksImlzcyI6IlNLZTEzYTEwOTVjODRiZWUyNWY1MGYwZWU2MTQ0ZThjZWUiLCJzdWIiOiJBQzUzZWU3YzliMDI5NzExMTUxOGE2ZjJlYWUyNzE0OGI0In0.304uLfV4yk4ZTMfS-FI4MK9tbuIOx_y5aZDh3AAef5c"
 }
-document.getElementById("info-submit").addEventListener("click", async () => {
+document.getElementById("info-submit").addEventListener("click", () => {
     var roomName = document.getElementById("room-name-input").value;
     var tokenValue = document.getElementById("token").value;
     var token = tokens[tokenValue];
+    console.log(roomName);
     videoConnect(token, roomName);
 });
 function videoConnect(token, roomName) {
@@ -18,16 +19,14 @@ function videoConnect(token, roomName) {
         name: roomName,
         audio: true,
         video: {width: 640}
-    }).then(room => {
-        console.log('Connected to Room "%s"', room.name);
-    
+    }).then((room) => {
+        console.log(room);
         room.participants.forEach(participantConnected);
         room.on('participantConnected', participantConnected);
     
         room.on('participantDisconnected', participantDisconnected);
         room.once('disconnected', error => room.participants.forEach(participantDisconnected));
         const localParticipant = room.localParticipant;
-        console.log('above room on')
         room.on('participantConnected', participant => {
             console.log(`Participant "${participant.identity}" connected`);
         
