@@ -2,17 +2,32 @@
     <head>
         <script src="https://media.twiliocdn.com/sdk/js/video/v1/twilio-video.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link href="./videochat.css" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/grayscale.min.css" rel="stylesheet">
     </head>
     <body>
-        <script src="./videochat.js" type="module"></script>
-        <input id="room-name-input" placeholder="Room name">
-        <select id="token">
-            <option value="angelica">Angelica</option>
-            <option value="bruno">Bruno</option>
-            <option value="chrystal">Chrystal</option>
-            <option value="ahmaad">Ahmaad</option>
-            <option value="danielle">Danielle</option>
-        </select>
-        <button id="info-submit">Submit</button>
+        <div class="vc">
+            <script src="./videochat.js" type="module"></script>
+            <h2>Provide a room name</h2>
+            <input id="room-name-input" placeholder="Room name">
+            <h2>Select a user</h2>
+            <select id="token">
+                <option value="angelica">Angelica</option>
+                <option value="bruno">Bruno</option>
+                <option value="chrystal">Chrystal</option>
+                <option value="ahmaad">Ahmaad</option>
+                <option value="danielle">Danielle</option>
+            </select>
+            <button id="info-submit">Submit</button>
+        </div>
     </body>
 </html>
