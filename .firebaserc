@@ -1,0 +1,9 @@
+{
+  "projects": {
+<<<<<<< HEAD
+    "default": "cfg-satt"
+=======
+    "default": "team-19-7b057"
+>>>>>>> f62321cf0848d682f2894a2ee393d92f64e8e862
+  }
+}
