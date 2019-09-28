@@ -1,7 +1,7 @@
 body {
     background-image: url('./videochatloading.gif');
     background-size: cover;
-    box-shadow: 0 3000px rgba(86, 67, 90, 0.4) inset;
+    box-shadow: 0 3000px rgba(219, 207, 221, 0.4) inset;
 }
 .vc {
     display: flex;
