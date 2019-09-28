@@ -15,6 +15,8 @@ body {
 #vc-participants {
     width: 50%;
     height: 50%;
+    display: flex;
+    overflow-wrap: break-word;
 }
 #input-form {
     display: flex;
