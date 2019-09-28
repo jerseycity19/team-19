@@ -38,7 +38,14 @@ function videoConnect(token, roomName) {
             document.getElementById('remote-media-div').appendChild(track.attach());
             });
         });
+        randomQuestions();
     });
+}
+function randomQuestions() {
+  var questions = ['What Role Does Television Play in Your Life and the Life of Your Family?', 'Do You Believe Facebook is Going Extinct?','Active Facebook User or Active Instragram User?', 'What is your favorite subject?', 'What are you passionate about?', 'What do you do as your hobby?'];
+  var question = questions[Math.floor(Math.random()*questions.length)];
+var txt = question;
+document.getElementById("suggestion").innerHTML = txt;
 }
   function participantConnected(participant) {
     console.log('Participant "%s" connected', participant.identity);
