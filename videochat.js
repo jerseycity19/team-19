@@ -42,8 +42,8 @@ function videoConnect(token, roomName) {
 }
   function participantConnected(participant) {
     console.log('Participant "%s" connected', participant.identity);
-  
     const div = document.createElement('div');
+    // const div = document.createElement('div');
     div.id = participant.sid;
     div.innerText = participant.identity;
   
@@ -55,8 +55,8 @@ function videoConnect(token, roomName) {
         trackSubscribed(div, publication.track);
       }
     });
-  
-    document.body.appendChild(div);
+    document.getElementById("vc-participants").appendChild(div);
+    // document.body.appendChild(div);
   }
   
   function participantDisconnected(participant) {

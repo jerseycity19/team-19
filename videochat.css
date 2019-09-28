@@ -7,8 +7,19 @@ body {
     display: flex;
     /* background-color: blue;s */
     margin-left: 20vw;
-    margin-top: 20vw;
+    /* margin-top: 20vw;s */
     width: 50vw;
     flex-direction: column;
     color: white;
+}
+#vc-participants {
+    width: 50%;
+    height: 50%;
+}
+#input-form {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    position: absolute;
+    bottom: 20;
 }
