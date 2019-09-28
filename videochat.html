@@ -1,11 +1,13 @@
 <html>
     <head>
         <script src="https://media.twiliocdn.com/sdk/js/video/v1/twilio-video.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
-        <script src="./videochat.js" type="module">
-        </script>
-        <input id="token-input" placeholder="Token input">
-        <button id="token-submit">Submit token</button>
+        <script src="./videochat.js" type="module"></script>
+        <script src="./fbFunctions.js" type="module"></script>
+        <input id="room-name-input" placeholder="Room name">
+        <input id="user-name-input" placeholder="E.g. John Doe">
+        <button id="info-submit">Submit room name</button>
     </body>
 </html>

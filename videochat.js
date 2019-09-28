@@ -1,13 +1,14 @@
 // const { connect } = require('twilio-video');
 const Video = Twilio.Video;
-var token = "";
-document.getElementById("token-submit").addEventListener("click", () => {
-    token = document.getElementById("token-input").value;
-    videoConnect();
+document.getElementById("info-submit").addEventListener("click", async () => {
+    var roomName = document.getElementById("room-name-input").value;
+    var userName = document.getElementById("user-name-input").value;
+    var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTS2UxM2ExMDk1Yzg0YmVlMjVmNTBmMGVlNjE0NGU4Y2VlLTE1Njk2NzMwNjQiLCJncmFudHMiOnsiaWRlbnRpdHkiOiJhbmciLCJ2aWRlbyI6eyJyb29tIjoidGVzdDEifX0sImlhdCI6MTU2OTY3MzA2NCwiZXhwIjoxNTY5Njc2NjY0LCJpc3MiOiJTS2UxM2ExMDk1Yzg0YmVlMjVmNTBmMGVlNjE0NGU4Y2VlIiwic3ViIjoiQUM1M2VlN2M5YjAyOTcxMTE1MThhNmYyZWFlMjcxNDhiNCJ9.iQFQ37OGKqfx1T3tVb8NzZTvSVdBW4b3AYLSdgETpNo";
+    videoConnect(token, roomName);
 });
-function videoConnect() {
+function videoConnect(token, roomName) {
     Video.connect(token, { 
-        name: 'room-name',
+        name: roomName,
         audio: true,
         video: {width: 640}
     }).then(room => {
